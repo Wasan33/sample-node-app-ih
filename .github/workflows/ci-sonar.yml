@@ -38,14 +38,14 @@ jobs:
          JEST_JUNIT_OUTPUT: coverage/junit.xml
        run: npm run test:coverage
 
-     - name: Publish test results to Checks
-       uses: dorny/test-reporter@v1
-       if: always()
-       with:
-         name: Jest Test Results
-         path: coverage/junit.xml
-         reporter: jest-junit
-         fail-on-error: true
+    #  - name: Publish test results to Checks
+    #    uses: dorny/test-reporter@v1
+    #    if: always()
+    #    with:
+    #      name: Jest Test Results
+    #      path: coverage/junit.xml
+    #      reporter: jest-junit
+    #      fail-on-error: true
 
      - name: Upload test results to GitHub
        uses: actions/upload-artifact@v4
